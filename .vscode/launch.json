@@ -1,0 +1,39 @@
+{
+    "configurations": [
+        {
+            "showDevDebugOutput": "parsed",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/weather_station_stm.elf",
+            "name": "Debug STM32",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "preLaunchTask": "Build STM",
+            "device": "stm32g474",
+            "configFiles": [
+                "openocd.cfg"
+            ],
+                            //   STM32G474xx.svd from STM32G4xx_DFP.pack, for open need to rename to .zip
+            "svdPath": "STM32G474xx.svd",
+            "runToEntryPoint": "main",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+        },
+        {
+            "showDevDebugOutput": "parsed",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/weather_station_stm.elf",
+            "name": "Attach STM32",
+            "request": "attach",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "preLaunchTask": "Build STM",
+            "device": "stm32g474",
+            "configFiles": [
+                "openocd.cfg"
+            ]
+        }
+    ]
+}

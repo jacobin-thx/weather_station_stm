@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "name": "STM32",
+      "includePath": [
+        "Core/Inc",
+        "Core/Lib/BME280",
+        "Drivers/CMSIS/Device/ST/STM32G4xx/Include",
+        "Drivers/CMSIS/Include",
+        "Drivers/STM32G4xx_HAL_Driver/Inc",
+        "Drivers/STM32G4xx_HAL_Driver/Inc/Legacy",
+        "FreeRTOS/Source/include",
+        "FreeRTOS/Source/portable/GCC/ARM_CM4F"
+      ],
+      "defines": [
+        "STM32G474xx",
+        "USE_HAL_DRIVER"
+      ],
+      "compilerPath": "/opt/st/stm32cubeclt/GNU-tools-for-STM32/bin/arm-none-eabi-gcc",
+      "cStandard": "gnu11"
+    }
+  ],
+  "version": 4
+}
