@@ -34,9 +34,9 @@ asDefinitionsFile:
 
 # Compiler flags
 cFlags: 
-  - -Wall
-  - -fdata-sections
-  - -ffunction-sections
+  # - -Wall
+  # - -fdata-sections
+  # - -ffunction-sections
   - -std=gnu11
   - -fstack-usage 
   #- -fcyclomatic-complexity 
@@ -50,13 +50,14 @@ assemblyFlags:
   - -Wall
   - -fdata-sections
   - -ffunction-sections
+  - -nostdlib
 
 linkerFlags: 
   - -Wl,--print-memory-usage
   # - -specs=nano.specs
   # - -specs=nosys.specs
   # - -lc -lm -lnosys
-  # - -nostdlib
+  - -nostdlib
 
 
 # libraries to be included. The -l prefix to the library will be automatically added.
