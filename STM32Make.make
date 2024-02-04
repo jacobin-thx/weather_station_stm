@@ -82,6 +82,7 @@ CPP_SOURCES = \
 
 # ASM sources
 ASM_SOURCES =  \
+Core/Src/reset_handler.s \
 startup_stm32g474xx.s
 
 
@@ -170,8 +171,8 @@ CXXFLAGS += -g -gdwarf -ggdb
 endif
 
 # Add additional flags
-CFLAGS += -Wall -fdata-sections -ffunction-sections -fstack-usage -g3 -std=gnu11 
-ASFLAGS += -Wall -fdata-sections -ffunction-sections 
+CFLAGS += -fstack-usage -g3 -ggdb3 -std=gnu11 
+ASFLAGS += -Wall -fdata-sections -ffunction-sections -nostdlib 
 CXXFLAGS += 
 
 # Generate dependency information
@@ -190,7 +191,7 @@ LIBDIR = \
 
 
 # Additional LD Flags from config file
-ADDITIONALLDFLAGS = -Wl,--print-memory-usage -specs=nano.specs 
+ADDITIONALLDFLAGS = -Wl,--print-memory-usage -nostdlib -specs=nano.specs 
 
 LDFLAGS = $(MCU) $(ADDITIONALLDFLAGS) -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 
